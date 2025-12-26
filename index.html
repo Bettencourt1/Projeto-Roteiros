@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Madeira Tourism</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="light">
+
+  <!-- HEADER / NAVBAR -->
+  <header class="bg-primary text-white p-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h1 class="m-0">Madeira Tourism</h1>
+      <nav>
+        <a href="index.html" class="text-white me-3">Início</a>
+        <a href="atracoes.html" class="text-white me-3">Lugares</a>
+        <a href="paginas/coisas-a-fazer/principal.html" class="text-white me-3">Atividades</a>
+        <a href="login.html" class="text-white">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CARROSSEL HERO -->
+  <section class="container mt-4">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner rounded" style="min-height: 400px;">
+        <div class="carousel-item active">
+          <img src="imagens/banner1.jpg" class="d-block w-100" alt="Vista 1 da Madeira" style="height:400px; object-fit:cover; border-radius:0.75rem;">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h2>Descubra a Madeira</h2>
+            <p>Reserve excursões, passeios e experiências únicas.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="imagens/banner2.jpg" class="d-block w-100" alt="Vista 2 da Madeira" style="height:400px; object-fit:cover; border-radius:0.75rem;">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h2>Natureza e Cultura</h2>
+            <p>Explore paisagens deslumbrantes e tradições locais.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="imagens/banner3.jpg" class="d-block w-100" alt="Vista 3 da Madeira" style="height:400px; object-fit:cover; border-radius:0.75rem;">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded p-3">
+            <h2>Aventura e Lazer</h2>
+            <p>Experiências inesquecíveis para todos os gostos.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- CARDS DE DESTAQUE -->
+  <main class="container mt-5">
+    <h2 class="mb-3">Destinos em Destaque</h2>
+    <div class="card-container">
+
+      <div class="card">
+        <img src="imagens/costa-norte.jpg" alt="Costa Norte da Madeira" style="height:180px; object-fit:cover; border-radius:0.75rem;">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <h5 class="card-title">Costa Norte</h5>
+            <p class="card-text">Explore as levadas, miradouros e a natureza exuberante.</p>
+          </div>
+          <a href="costa-norte.html" class="btn btn-light bg-opacity-75 text-dark mt-2">Ver Mais</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="imagens/costa-sul.jpg" alt="Costa Sul da Madeira" style="height:180px; object-fit:cover; border-radius:0.75rem;">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <h5 class="card-title">Costa Sul</h5>
+            <p class="card-text">Descubra praias, cidades históricas e gastronomia local.</p>
+          </div>
+          <a href="costa-sul.html" class="btn btn-light bg-opacity-75 text-dark mt-2">Ver Mais</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="imagens/porto-santo.jpg" alt="Porto Santo" style="height:180px; object-fit:cover; border-radius:0.75rem;">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <h5 class="card-title">Porto Santo</h5>
+            <p class="card-text">Relaxe em praias douradas e aproveite atividades náuticas.</p>
+          </div>
+          <a href="porto-santo.html" class="btn btn-light bg-opacity-75 text-dark mt-2">Ver Mais</a>
+        </div>
+      </div>
+
+      <div class="card">
+  <img src="imagens/funchal.jpg" alt="Funchal - Capital da Madeira" style="height:180px; object-fit:cover; border-radius:0.75rem;">
+  <div class="card-body d-flex flex-column justify-content-between">
+    <div>
+      <h5 class="card-title">Funchal</h5>
+      <p class="card-text">Explore a capital da Madeira com cultura, gastronomia e passeios incríveis.</p>
+    </div>
+    <a href="capital.html" class="btn">Ver Mais</a>
+  </div>
+</div>
+
+
+    </div>
+
+    
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-secondary text-white text-center p-4 mt-5">
+    &copy; 2025 Madeira Tourism. Todos os direitos reservados.
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

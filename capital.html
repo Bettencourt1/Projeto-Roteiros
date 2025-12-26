@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capital - Funchal | Madeira Tourism</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="light">
+
+<!-- HEADER / NAVBAR -->
+<header class="bg-primary text-white p-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <h1 class="m-0">Madeira Tourism</h1>
+    <nav>
+      <a href="index.html" class="text-white me-3">Início</a>
+      <a href="atracoes.html" class="text-white me-3">Lugares</a>
+      <a href="paginas/coisas-a-fazer/principal.html" class="text-white me-3">Atividades</a>
+      <a href="login.html" class="text-white">Login</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero my-4" style="background-image: url('imagens/funchal-banner.jpg');">
+  <h1>Funchal</h1>
+  <p>Descubra a capital da Madeira com cultura, história e lazer.</p>
+</section>
+
+<!-- CARDS DE ATIVIDADES -->
+<main class="container my-4">
+  <h2 class="mb-3">Atividades no Funchal</h2>
+  <div class="card-container">
+
+    <!-- Mercado dos Lavradores -->
+    <div class="card">
+      <img src="imagens/mercado-lavradores.jpg" alt="Mercado dos Lavradores" style="height:180px; object-fit:cover; border-radius:0.75rem;">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h5 class="card-title">Mercado dos Lavradores</h5>
+          <p class="card-text">Visite o mercado tradicional do Funchal e descubra frutas, flores e produtos locais.</p>
+        </div>
+        <div class="d-flex justify-content-between mt-2">
+          <button class="btn btn-outline-primary" onclick="alert('Mercado dos Lavradores adicionado aos favoritos!')">Favoritos</button>
+          <button class="btn btn-primary" onclick="alert('Mercado dos Lavradores adicionado ao carrinho!')">Comprar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Teleférico do Funchal -->
+    <div class="card">
+      <img src="imagens/funchal-teleferico.jpg" alt="Teleférico do Funchal" style="height:180px; object-fit:cover; border-radius:0.75rem;">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h5 class="card-title">Teleférico do Funchal</h5>
+          <p class="card-text">Desfrute de uma viagem panorâmica até Monte, com vistas deslumbrantes sobre a cidade.</p>
+        </div>
+        <div class="d-flex justify-content-between mt-2">
+          <button class="btn btn-outline-primary" onclick="alert('Teleférico do Funchal adicionado aos favoritos!')">Favoritos</button>
+          <button class="btn btn-primary" onclick="alert('Teleférico do Funchal adicionado ao carrinho!')">Comprar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jardim Botânico da Madeira -->
+    <div class="card">
+      <img src="imagens/jardim-botanico.jpg" alt="Jardim Botânico da Madeira" style="height:180px; object-fit:cover; border-radius:0.75rem;">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h5 class="card-title">Jardim Botânico da Madeira</h5>
+          <p class="card-text">Explore uma coleção incrível de plantas e flores de várias partes do mundo.</p>
+        </div>
+        <div class="d-flex justify-content-between mt-2">
+          <button class="btn btn-outline-primary" onclick="alert('Jardim Botânico adicionado aos favoritos!')">Favoritos</button>
+          <button class="btn btn-primary" onclick="alert('Jardim Botânico adicionado ao carrinho!')">Comprar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Museu CR7 -->
+    <div class="card">
+      <img src="imagens/museu-cr7.jpg" alt="Museu CR7" style="height:180px; object-fit:cover; border-radius:0.75rem;">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <div>
+          <h5 class="card-title">Museu CR7</h5>
+          <p class="card-text">Conheça a história de Cristiano Ronaldo e veja troféus e memorabilia do craque madeirense.</p>
+        </div>
+        <div class="d-flex justify-content-between mt-2">
+          <button class="btn btn-outline-primary" onclick="alert('Museu CR7 adicionado aos favoritos!')">Favoritos</button>
+          <button class="btn btn-primary" onclick="alert('Museu CR7 adicionado ao carrinho!')">Comprar</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-secondary text-white text-center p-4 mt-5">
+  &copy; 2025 Madeira Tourism. Todos os direitos reservados.
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

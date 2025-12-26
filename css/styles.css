@@ -1,0 +1,217 @@
+/* ===============================================
+   VARIÁVEIS DE TEMAS
+================================================ */
+:root {
+  --bg: #f0f2f5;
+  --card-bg: #ffffff;
+  --text: #1a1a1a;
+  --primary: #0d6efd;
+  --secondary: #6c757d;
+  --border-radius: 0.75rem;
+  --transition: 0.3s;
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --card-bg: #1e1e1e;
+  --text: #f5f5f5;
+  --primary: #4dabf7;
+  --secondary: #adb5bd;
+}
+
+/* ===============================================
+   BODY & CONTAINER DE LOGIN
+================================================ */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: block;
+}
+
+.login-container, .register-container {
+  background-color: var(--card-bg);
+  padding: 2.5rem 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 400px; 
+  margin: 5vh auto; 
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* ===============================================
+   TÍTULOS
+================================================ */
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+/* ===============================================
+   FORMULÁRIO
+================================================ */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+input {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
+  outline: none;
+}
+
+input:user-valid {
+  border: 2px solid green;
+}
+
+input:user-invalid {
+  border: 2px solid red;
+}
+
+button {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: var(--primary);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color var(--transition);
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* ===============================================
+   LINKS
+================================================ */
+.login-container p {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.login-container a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.login-container a:hover {
+  color: #0056b3;
+}
+
+/* ===============================================
+   RESPONSIVIDADE
+================================================ */
+@media (max-width: 500px) {
+  .login-container {
+    padding: 2rem;
+    margin: 1rem;
+  }
+
+  input, button {
+    font-size: 0.95rem;
+  }
+}
+/* ===============================================
+   HERO / BANNER
+================================================ */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../imagens/banner.jpg') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 5rem 2rem;
+  border-radius: var(--border-radius);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* ===============================================
+   CARD DESTACADO
+================================================ */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+/* ===============================================
+   PÁGINA DE ERRO 404
+================================================ */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  text-align: center;
+  padding: 2rem;
+}
+
+.error-container h1 {
+  font-size: 6rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.error-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.error-container p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.error-container a.btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  transition: background-color var(--transition);
+}
+
+.error-container a.btn:hover {
+  background-color: #0056b3;
+}
+.card-body .btn {
+  background-color: rgba(255,255,255,0.9); /* quadrado atrás */
+  color: var(--text);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.card-body .btn:hover {
+  background-color: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
