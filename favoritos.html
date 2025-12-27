@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favoritos | Madeira Tourism</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="light">
+
+<!-- HEADER / NAVBAR -->
+<header class="bg-primary text-white p-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <h1 class="m-0">Madeira Tourism</h1>
+    <nav class="d-flex align-items-center">
+      <a href="index.html" class="text-white me-3">Início</a>
+      <a href="atracoes.html" class="text-white me-3">Lugares</a>
+      <a href="paginas/coisas-a-fazer/principal.html" class="text-white me-3">Atividades</a>
+
+      <!-- Ícone de usuário com dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" id="usuarioDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          👤
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="usuarioDropdown">
+          <li><a class="dropdown-item" href="carrinho.html">Carrinho</a></li>
+          <li><a class="dropdown-item" href="favoritos.html">Favoritos</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- CONTEÚDO -->
+<main class="container my-4">
+  <h2 class="mb-3">Seus Favoritos</h2>
+
+  <div class="favorito-item">
+    <span class="item-nome">Praia Formosa</span>
+    <button class="btn btn-primary btn-sm btn-ver" data-bs-toggle="modal" data-bs-target="#modalPraia">Ver</button>
+    <button class="btn btn-danger btn-sm btn-remover">Remover</button>
+  </div>
+
+  <div class="favorito-item">
+    <span class="item-nome">Teleférico do Funchal</span>
+    <button class="btn btn-primary btn-sm btn-ver" data-bs-toggle="modal" data-bs-target="#modalTeleferico">Ver</button>
+    <button class="btn btn-danger btn-sm btn-remover">Remover</button>
+  </div>
+
+  <div class="favorito-item">
+    <span class="item-nome">Trilho da Levada</span>
+    <button class="btn btn-primary btn-sm btn-ver" data-bs-toggle="modal" data-bs-target="#modalTrilho">Ver</button>
+    <button class="btn btn-danger btn-sm btn-remover">Remover</button>
+  </div>
+
+  <div class="favorito-item">
+    <span class="item-nome">Museu CR7</span>
+    <button class="btn btn-primary btn-sm btn-ver" data-bs-toggle="modal" data-bs-target="#modalCR7">Ver</button>
+    <button class="btn btn-danger btn-sm btn-remover">Remover</button>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="bg-secondary text-white text-center p-4 mt-5">
+  &copy; 2025 Madeira Tourism. Todos os direitos reservados.
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

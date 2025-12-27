@@ -4,21 +4,41 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Principais Atrações | Madeira Tourism</title>
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    main { flex: 1; }
+    footer { flex-shrink: 0; }
+  </style>
 </head>
 <body data-theme="light">
+
 
 <!-- HEADER / NAVBAR -->
 <header class="bg-primary text-white p-3">
   <div class="container d-flex justify-content-between align-items-center">
     <h1 class="m-0">Madeira Tourism</h1>
-    <nav>
+    <nav class="d-flex align-items-center">
       <a href="index.html" class="text-white me-3">Início</a>
       <a href="atracoes.html" class="text-white me-3">Lugares</a>
       <a href="paginas/coisas-a-fazer/principal.html" class="text-white me-3">Atividades</a>
-      <a href="login.html" class="text-white">Login</a>
+
+      <!-- Ícone de usuário com dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" id="usuarioDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          👤
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="usuarioDropdown">
+          <li><a class="dropdown-item" href="carrinho.html">Carrinho</a></li>
+          <li><a class="dropdown-item" href="favoritos.html">Favoritos</a></li>
+        </ul>
+      </div>
     </nav>
   </div>
 </header>
@@ -38,14 +58,9 @@
     <div class="card">
       <img src="imagens/cabo-girao.jpg" alt="Cabo Girão" style="height:180px; object-fit:cover; border-radius:0.75rem;">
       <div class="card-body d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="card-title">Cabo Girão</h5>
-          <p class="card-text">O famoso miradouro com uma plataforma de vidro e vistas deslumbrantes sobre o Atlântico.</p>
-        </div>
-        <div class="d-flex justify-content-between mt-2">
-          <button class="btn btn-outline-primary" onclick="alert('Cabo Girão adicionado aos favoritos!')">Favoritos</button>
-          <button class="btn btn-primary" onclick="alert('Cabo Girão adicionado ao carrinho!')">Comprar</button>
-        </div>
+        <h5>Cabo Girão</h5>
+        <p>O famoso miradouro com uma plataforma de vidro e vistas deslumbrantes sobre o Atlântico.</p>
+        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalCabo">Ver</button>
       </div>
     </div>
 
@@ -53,14 +68,9 @@
     <div class="card">
       <img src="imagens/pico-do-arieiro.jpg" alt="Pico do Arieiro" style="height:180px; object-fit:cover; border-radius:0.75rem;">
       <div class="card-body d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="card-title">Pico do Arieiro</h5>
-          <p class="card-text">Uma das montanhas mais altas da Madeira, ideal para trilhos e contemplar o nascer do sol.</p>
-        </div>
-        <div class="d-flex justify-content-between mt-2">
-          <button class="btn btn-outline-primary" onclick="alert('Pico do Arieiro adicionado aos favoritos!')">Favoritos</button>
-          <button class="btn btn-primary" onclick="alert('Pico do Arieiro adicionado ao carrinho!')">Comprar</button>
-        </div>
+        <h5>Pico do Arieiro</h5>
+        <p>Uma das montanhas mais altas da Madeira, ideal para trilhos e contemplar o nascer do sol.</p>
+        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalArieiro">Ver</button>
       </div>
     </div>
 
@@ -68,14 +78,9 @@
     <div class="card">
       <img src="imagens/santana.jpg" alt="Santana" style="height:180px; object-fit:cover; border-radius:0.75rem;">
       <div class="card-body d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="card-title">Santana</h5>
-          <p class="card-text">Conhecida pelas casas típicas de telhado de colmo e a beleza natural da região norte da ilha.</p>
-        </div>
-        <div class="d-flex justify-content-between mt-2">
-          <button class="btn btn-outline-primary" onclick="alert('Santana adicionado aos favoritos!')">Favoritos</button>
-          <button class="btn btn-primary" onclick="alert('Santana adicionado ao carrinho!')">Comprar</button>
-        </div>
+        <h5>Santana</h5>
+        <p>Conhecida pelas casas típicas de telhado de colmo e a beleza natural da região norte da ilha.</p>
+        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalSantana">Ver</button>
       </div>
     </div>
 
@@ -83,27 +88,182 @@
     <div class="card">
       <img src="imagens/levadas.jpg" alt="Levadas da Madeira" style="height:180px; object-fit:cover; border-radius:0.75rem;">
       <div class="card-body d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="card-title">Levadas da Madeira</h5>
-          <p class="card-text">Trilhe as famosas levadas e descubra a flora e paisagens únicas da ilha.</p>
-        </div>
-        <div class="d-flex justify-content-between mt-2">
-          <button class="btn btn-outline-primary" onclick="alert('Levadas da Madeira adicionadas aos favoritos!')">Favoritos</button>
-          <button class="btn btn-primary" onclick="alert('Levadas da Madeira adicionadas ao carrinho!')">Comprar</button>
-        </div>
+        <h5>Levadas da Madeira</h5>
+        <p>Trilhe as famosas levadas e descubra a flora e paisagens únicas da ilha.</p>
+        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalLevadas">Ver</button>
       </div>
     </div>
 
   </div>
 </main>
 
+<!-- ================= MODAIS ================= -->
+
+<!-- Cabo Girão -->
+<div class="modal fade" id="modalCabo" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Cabo Girão</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>Miradouro de vidro</li>
+          <li>Altura de 580 metros</li>
+          <li>Vista para o Atlântico</li>
+        </ul>
+        <h6>Descrição</h6>
+        <p>Cabo Girão é um dos pontos mais altos da Europa com miradouro de vidro transparente.</p>
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Chegada ao miradouro</li>
+          <li>Visita e fotografia</li>
+        </ol>
+        <h6>Incluído</h6>
+        <p>Acesso ao miradouro</p>
+        <h6>Informações</h6>
+        <p>Duração: 1h · Fácil · Preço: 5€</p>
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐☆
+        <h6>Comentários</h6>
+        <p><strong>Maria:</strong> Vista incrível, recomendo!</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Cabo Girão',5)">🛒 Comprar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Pico do Arieiro -->
+<div class="modal fade" id="modalArieiro" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Pico do Arieiro</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>Trilhos desafiantes</li>
+          <li>Picos e vales deslumbrantes</li>
+          <li>Nascer do sol imperdível</li>
+        </ul>
+        <h6>Descrição</h6>
+        <p>O Pico do Arieiro é o terceiro ponto mais alto da Madeira, famoso pelos seus trilhos.</p>
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Início do trilho</li>
+          <li>Paradas panorâmicas</li>
+        </ol>
+        <h6>Incluído</h6>
+        <p>Guia opcional</p>
+        <h6>Informações</h6>
+        <p>Duração: 3h · Difícil · Preço: 12€</p>
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐⭐
+        <h6>Comentários</h6>
+        <p><strong>João:</strong> Experiência desafiadora e incrível!</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Pico do Arieiro',12)">🛒 Comprar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Santana -->
+<div class="modal fade" id="modalSantana" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Santana</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>Casas típicas de colmo</li>
+          <li>Beleza natural da região norte</li>
+          <li>Ambiente cultural</li>
+        </ul>
+        <h6>Descrição</h6>
+        <p>Santana é famosa pelas suas casas tradicionais e paisagens encantadoras.</p>
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Visita à vila</li>
+          <li>Exploração das casas típicas</li>
+        </ol>
+        <h6>Incluído</h6>
+        <p>Guia local opcional</p>
+        <h6>Informações</h6>
+        <p>Duração: 2h · Fácil · Preço: 8€</p>
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐☆
+        <h6>Comentários</h6>
+        <p><strong>Ana:</strong> Lugar encantador!</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Santana',8)">🛒 Comprar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Levadas da Madeira -->
+<div class="modal fade" id="modalLevadas" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Levadas da Madeira</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>Trilhas únicas</li>
+          <li>Flora e fauna diversificada</li>
+          <li>Paisagens deslumbrantes</li>
+        </ul>
+        <h6>Descrição</h6>
+        <p>As levadas da Madeira permitem caminhadas incríveis e contato com a natureza.</p>
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Início da caminhada</li>
+          <li>Paradas para fotos e descanso</li>
+        </ol>
+        <h6>Incluído</h6>
+        <p>Guia opcional</p>
+        <h6>Informações</h6>
+        <p>Duração: 2h30 · Fácil · Preço: 10€</p>
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐☆
+        <h6>Comentários</h6>
+        <p><strong>Luís:</strong> Caminhada incrível e paisagens de tirar o fôlego!</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Levadas da Madeira',10)">🛒 Comprar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer class="bg-secondary text-white text-center p-4 mt-5">
   &copy; 2025 Madeira Tourism. Todos os direitos reservados.
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
 
 </body>
 </html>

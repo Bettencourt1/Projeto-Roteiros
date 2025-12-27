@@ -4,90 +4,249 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Costa Sul - Madeira Tourism</title>
-  <!-- Bootstrap CSS -->
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body data-theme="light">
 
 <!-- HEADER / NAVBAR -->
 <header class="bg-primary text-white p-3">
   <div class="container d-flex justify-content-between align-items-center">
     <h1 class="m-0">Madeira Tourism</h1>
-    <nav>
+    <nav class="d-flex align-items-center">
       <a href="index.html" class="text-white me-3">Início</a>
       <a href="atracoes.html" class="text-white me-3">Lugares</a>
       <a href="paginas/coisas-a-fazer/principal.html" class="text-white me-3">Atividades</a>
-      <a href="login.html" class="text-white">Login</a>
+
+      <!-- Ícone de usuário com dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" id="usuarioDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          👤
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="usuarioDropdown">
+          <li><a class="dropdown-item" href="carrinho.html">Carrinho</a></li>
+          <li><a class="dropdown-item" href="favoritos.html">Favoritos</a></li>
+        </ul>
+      </div>
     </nav>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero my-4" style="background-image: url('imagens/costa-sul-banner.jpg');">
+<section class="hero my-4" style="background-image:url('imagens/costa-sul-banner.jpg')">
   <h1>Costa Sul da Madeira</h1>
-  <p>Praias deslumbrantes, cidades históricas e gastronomia local.</p>
+  <p>Praias, vilas históricas e o melhor clima da ilha.</p>
 </section>
 
-<!-- CARDS DE ATIVIDADES -->
+<!-- ATIVIDADES -->
 <main class="container my-4">
   <h2 class="mb-3">Atividades na Costa Sul</h2>
+
   <div class="card-container">
 
-    <!-- Praia Formosa -->
+    <!-- PRAIA FORMOSA -->
     <div class="card">
-      <img src="imagens/praia-formosa.jpg" alt="Praia Formosa" style="height:180px; object-fit:cover; border-radius:0.75rem;">
-      <div class="card-body d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="card-title">Praia Formosa</h5>
-          <p class="card-text">A maior praia do Funchal, perfeita para banho, sol e surf.</p>
-        </div>
-        <div class="d-flex justify-content-between mt-2">
-          <button class="btn btn-outline-primary" onclick="alert('Praia Formosa adicionada aos favoritos!')">Favoritos</button>
-          <button class="btn btn-primary" onclick="alert('Praia Formosa adicionada ao carrinho!')">Comprar</button>
-        </div>
+      <img src="imagens/praia-formosa.jpg" alt="Praia Formosa">
+      <div class="card-body">
+        <h5>Praia Formosa</h5>
+        <p>A maior praia do Funchal, ideal para relaxar junto ao mar.</p>
+        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalPraia">
+          Ver
+        </button>
       </div>
     </div>
 
-    <!-- Câmara de Lobos -->
+    <!-- CÂMARA DE LOBOS -->
     <div class="card">
-      <img src="imagens/camara-de-lobos.jpg" alt="Câmara de Lobos" style="height:180px; object-fit:cover; border-radius:0.75rem;">
-      <div class="card-body d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="card-title">Câmara de Lobos</h5>
-          <p class="card-text">Visite a vila de pescadores que inspirou Winston Churchill e experimente a poncha local.</p>
-        </div>
-        <div class="d-flex justify-content-between mt-2">
-          <button class="btn btn-outline-primary" onclick="alert('Câmara de Lobos adicionada aos favoritos!')">Favoritos</button>
-          <button class="btn btn-primary" onclick="alert('Câmara de Lobos adicionada ao carrinho!')">Comprar</button>
-        </div>
+      <img src="imagens/camara-de-lobos.jpg" alt="Câmara de Lobos">
+      <div class="card-body">
+        <h5>Câmara de Lobos</h5>
+        <p>Vila piscatória famosa pela poncha e pelas paisagens.</p>
+        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalCamara">
+          Ver
+        </button>
       </div>
     </div>
-    <!-- Ponta do Sol -->
+
+    <!-- PONTA DO SOL -->
     <div class="card">
-      <img src="imagens/ponta-do-sol.jpg" alt="Ponta do Sol" style="height:180px; object-fit:cover; border-radius:0.75rem;">
-      <div class="card-body d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="card-title">Ponta do Sol</h5>
-          <p class="card-text">A vila mais ensolarada da ilha, ideal para relaxar e admirar o pôr do sol.</p>
-        </div>
-        <div class="d-flex justify-content-between mt-2">
-          <button class="btn btn-outline-primary" onclick="alert('Ponta do Sol adicionada aos favoritos!')">Favoritos</button>
-          <button class="btn btn-primary" onclick="alert('Ponta do Sol adicionada ao carrinho!')">Comprar</button>
-        </div>
+      <img src="imagens/ponta-do-sol.jpg" alt="Ponta do Sol">
+      <div class="card-body">
+        <h5>Ponta do Sol</h5>
+        <p>Conhecida como a vila mais solarenga da Madeira.</p>
+        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalPonta">
+          Ver
+        </button>
       </div>
     </div>
 
   </div>
 </main>
 
+<!-- ================= MODAIS ================= -->
+
+<!-- PRAIA FORMOSA -->
+<div class="modal fade" id="modalPraia" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5>Praia Formosa</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>Praia de seixos e areia negra</li>
+          <li>Infraestruturas completas</li>
+          <li>Excelente para desportos aquáticos</li>
+        </ul>
+
+        <h6>Descrição</h6>
+        <p>A Praia Formosa é a maior praia pública da Madeira, muito popular entre locais e turistas.</p>
+
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Chegada ao Funchal</li>
+          <li>Tempo livre na praia</li>
+        </ol>
+
+        <h6>Incluído</h6>
+        <p>Acesso à praia e áreas públicas</p>
+
+        <h6>Informações</h6>
+        <p>Duração livre · Fácil · Preço: 10€</p>
+
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐☆
+
+        <h6>Comentários</h6>
+        <p><strong>Ana:</strong> Excelente para passar a tarde!</p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Praia Formosa',10)">
+          🛒 Comprar
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- CÂMARA DE LOBOS -->
+<div class="modal fade" id="modalCamara" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5>Câmara de Lobos</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>Vila piscatória tradicional</li>
+          <li>Poncha regional</li>
+          <li>Paisagem icónica</li>
+        </ul>
+
+        <h6>Descrição</h6>
+        <p>Câmara de Lobos é uma vila cheia de tradição, muito ligada à pesca.</p>
+
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Centro da vila</li>
+          <li>Prova de poncha</li>
+        </ol>
+
+        <h6>Incluído</h6>
+        <p>Guia local</p>
+
+        <h6>Informações</h6>
+        <p>Duração: 2h · Fácil · Preço: 15€</p>
+
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐⭐
+
+        <h6>Comentários</h6>
+        <p><strong>João:</strong> Só gente estranha, mas bonito.</p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Câmara de Lobos',15)">
+          🛒 Comprar
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- PONTA DO SOL -->
+<div class="modal fade" id="modalPonta" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5>Ponta do Sol</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>Pôr do sol incrível</li>
+          <li>Clima ameno</li>
+          <li>Ambiente tranquilo</li>
+        </ul>
+
+        <h6>Descrição</h6>
+        <p>Ponta do Sol é ideal para quem procura descanso e paisagens.</p>
+
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Passeio pela vila</li>
+          <li>Zona balnear</li>
+        </ol>
+
+        <h6>Incluído</h6>
+        <p>Visita guiada</p>
+
+        <h6>Informações</h6>
+        <p>Duração: 1h30 · Fácil · Preço: 12€</p>
+
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐☆
+
+        <h6>Comentários</h6>
+        <p><strong>Sofia:</strong> Lugar muito tranquilo.</p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Ponta do Sol',12)">
+          🛒 Comprar
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer class="bg-secondary text-white text-center p-4 mt-5">
-  &copy; 2025 Madeira Tourism. Todos os direitos reservados.
+  &copy; 2025 Madeira Tourism
 </footer>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

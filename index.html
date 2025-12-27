@@ -11,17 +11,27 @@
 <body data-theme="light">
 
   <!-- HEADER / NAVBAR -->
-  <header class="bg-primary text-white p-3">
-    <div class="container d-flex justify-content-between align-items-center">
-      <h1 class="m-0">Madeira Tourism</h1>
-      <nav>
-        <a href="index.html" class="text-white me-3">Início</a>
-        <a href="atracoes.html" class="text-white me-3">Lugares</a>
-        <a href="paginas/coisas-a-fazer/principal.html" class="text-white me-3">Atividades</a>
-        <a href="login.html" class="text-white">Login</a>
-      </nav>
-    </div>
-  </header>
+<header class="bg-primary text-white p-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <h1 class="m-0">Madeira Tourism</h1>
+    <nav class="d-flex align-items-center">
+      <a href="index.html" class="text-white me-3">Início</a>
+      <a href="atracoes.html" class="text-white me-3">Lugares</a>
+      <a href="paginas/coisas-a-fazer/principal.html" class="text-white me-3">Atividades</a>
+
+      <!-- Ícone de usuário com dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" id="usuarioDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          👤
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="usuarioDropdown">
+          <li><a class="dropdown-item" href="carrinho.html">Carrinho</a></li>
+          <li><a class="dropdown-item" href="favoritos.html">Favoritos</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>
 
   <!-- CARROSSEL HERO -->
   <section class="container mt-4">

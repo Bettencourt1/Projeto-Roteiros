@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Porto Santo - Madeira Tourism</title>
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -14,95 +13,259 @@
 <header class="bg-primary text-white p-3">
   <div class="container d-flex justify-content-between align-items-center">
     <h1 class="m-0">Madeira Tourism</h1>
-    <nav>
+    <nav class="d-flex align-items-center">
       <a href="index.html" class="text-white me-3">Início</a>
       <a href="atracoes.html" class="text-white me-3">Lugares</a>
       <a href="paginas/coisas-a-fazer/principal.html" class="text-white me-3">Atividades</a>
-      <a href="login.html" class="text-white">Login</a>
+
+      <!-- Ícone de usuário com dropdown -->
+      <div class="dropdown">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" id="usuarioDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          👤
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="usuarioDropdown">
+          <li><a class="dropdown-item" href="carrinho.html">Carrinho</a></li>
+          <li><a class="dropdown-item" href="favoritos.html">Favoritos</a></li>
+        </ul>
+      </div>
     </nav>
   </div>
 </header>
 
 <!-- HERO -->
-<section class="hero my-4" style="background-image: url('imagens/porto-santo-banner.jpg');">
+<section class="hero my-4" style="background-image:url('imagens/porto-santo-banner.jpg')">
   <h1>Porto Santo</h1>
   <p>Praias douradas, mar cristalino e aventuras relaxantes.</p>
 </section>
 
-<!-- CARDS DE ATIVIDADES -->
+<!-- ATIVIDADES -->
 <main class="container my-4">
   <h2 class="mb-3">Atividades em Porto Santo</h2>
+
   <div class="card-container">
 
     <!-- Praia do Porto Santo -->
     <div class="card">
-      <img src="imagens/praia-porto-santo.jpg" alt="Praia do Porto Santo" style="height:180px; object-fit:cover; border-radius:0.75rem;">
-      <div class="card-body d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="card-title">Praia do Porto Santo</h5>
-          <p class="card-text">A famosa praia de areia dourada com 9 km de extensão.</p>
-        </div>
-        <div class="d-flex justify-content-between mt-2">
-          <button class="btn btn-outline-primary" onclick="alert('Praia do Porto Santo adicionada aos favoritos!')">Favoritos</button>
-          <button class="btn btn-primary" onclick="alert('Praia do Porto Santo adicionada ao carrinho!')">Comprar</button>
-        </div>
+      <img src="imagens/praia-porto-santo.jpg" alt="Praia do Porto Santo">
+      <div class="card-body">
+        <h5>Praia do Porto Santo</h5>
+        <p>Praia de areia dourada com 9 km de extensão.</p>
+        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalPraia">
+          Ver
+        </button>
       </div>
     </div>
 
     <!-- Museu Cristóvão Colombo -->
     <div class="card">
-      <img src="imagens/museu-colombo.jpg" alt="Museu Cristóvão Colombo" style="height:180px; object-fit:cover; border-radius:0.75rem;">
-      <div class="card-body d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="card-title">Museu Cristóvão Colombo</h5>
-          <p class="card-text">Conheça a história do navegador e a ligação da ilha à descoberta da Madeira.</p>
-        </div>
-        <div class="d-flex justify-content-between mt-2">
-          <button class="btn btn-outline-primary" onclick="alert('Museu Cristóvão Colombo adicionado aos favoritos!')">Favoritos</button>
-          <button class="btn btn-primary" onclick="alert('Museu Cristóvão Colombo adicionado ao carrinho!')">Comprar</button>
-        </div>
+      <img src="imagens/museu-colombo.jpg" alt="Museu Cristóvão Colombo">
+      <div class="card-body">
+        <h5>Museu Cristóvão Colombo</h5>
+        <p>História do navegador e da ligação da ilha à descoberta da Madeira.</p>
+        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalMuseu">
+          Ver
+        </button>
       </div>
     </div>
 
     <!-- Pico do Castelo -->
     <div class="card">
-      <img src="imagens/pico-do-castelo.jpg" alt="Pico do Castelo" style="height:180px; object-fit:cover; border-radius:0.75rem;">
-      <div class="card-body d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="card-title">Pico do Castelo</h5>
-          <p class="card-text">Suba ao ponto mais alto da ilha e admire a vista panorâmica do arquipélago.</p>
-        </div>
-        <div class="d-flex justify-content-between mt-2">
-          <button class="btn btn-outline-primary" onclick="alert('Pico do Castelo adicionado aos favoritos!')">Favoritos</button>
-          <button class="btn btn-primary" onclick="alert('Pico do Castelo adicionado ao carrinho!')">Comprar</button>
-        </div>
+      <img src="imagens/pico-do-castelo.jpg" alt="Pico do Castelo">
+      <div class="card-body">
+        <h5>Pico do Castelo</h5>
+        <p>Subida ao ponto mais alto da ilha com vistas panorâmicas.</p>
+        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalPico">
+          Ver
+        </button>
       </div>
     </div>
 
     <!-- Golfe do Porto Santo -->
     <div class="card">
-      <img src="imagens/golfe-porto-santo.jpg" alt="Golfe do Porto Santo" style="height:180px; object-fit:cover; border-radius:0.75rem;">
-      <div class="card-body d-flex flex-column justify-content-between">
-        <div>
-          <h5 class="card-title">Golfe do Porto Santo</h5>
-          <p class="card-text">Desfrute de um campo de golfe internacional com vistas para o mar.</p>
-        </div>
-        <div class="d-flex justify-content-between mt-2">
-          <button class="btn btn-outline-primary" onclick="alert('Golfe do Porto Santo adicionado aos favoritos!')">Favoritos</button>
-          <button class="btn btn-primary" onclick="alert('Golfe do Porto Santo adicionado ao carrinho!')">Comprar</button>
-        </div>
+      <img src="imagens/golfe-porto-santo.jpg" alt="Golfe do Porto Santo">
+      <div class="card-body">
+        <h5>Golfe do Porto Santo</h5>
+        <p>Campo de golfe internacional com vistas para o mar.</p>
+        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalGolfe">
+          Ver
+        </button>
       </div>
     </div>
 
   </div>
 </main>
 
+<!-- ================= MODAIS ================= -->
+
+<!-- PRAIA DO PORTO SANTO -->
+<div class="modal fade" id="modalPraia" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Praia do Porto Santo</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>9 km de areia dourada</li>
+          <li>Mar cristalino</li>
+          <li>Ótimo para banhos e relaxamento</li>
+        </ul>
+        <h6>Descrição</h6>
+        <p>Praia do Porto Santo é famosa pelas suas extensas areias douradas e tranquilidade.</p>
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Chegada à praia</li>
+          <li>Tempo livre para atividades</li>
+        </ol>
+        <h6>Incluído</h6>
+        <p>Acesso à praia</p>
+        <h6>Informações</h6>
+        <p>Duração livre · Fácil · Preço: 5€</p>
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐☆
+        <h6>Comentários</h6>
+        <p><strong>Ana:</strong> Lugar incrível para relaxar!</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Praia do Porto Santo',5)">
+          🛒 Comprar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MUSEU CRISTÓVÃO COLOMBO -->
+<div class="modal fade" id="modalMuseu" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Museu Cristóvão Colombo</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>História do navegador</li>
+          <li>Exposições interativas</li>
+          <li>Arquitetura histórica</li>
+        </ul>
+        <h6>Descrição</h6>
+        <p>Conheça a ligação do Porto Santo à descoberta da Madeira e à história de Colombo.</p>
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Visita guiada</li>
+          <li>Exposição interativa</li>
+        </ol>
+        <h6>Incluído</h6>
+        <p>Entrada no museu</p>
+        <h6>Informações</h6>
+        <p>Duração: 1h30 · Fácil · Preço: 8€</p>
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐⭐
+        <h6>Comentários</h6>
+        <p><strong>João:</strong> Muito interessante e educativo.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Museu Cristóvão Colombo',8)">
+          🛒 Comprar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PICO DO CASTELO -->
+<div class="modal fade" id="modalPico" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Pico do Castelo</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>Vista panorâmica do arquipélago</li>
+          <li>Subida moderada</li>
+          <li>Fotografia e natureza</li>
+        </ul>
+        <h6>Descrição</h6>
+        <p>Suba ao Pico do Castelo e admire toda a beleza do Porto Santo.</p>
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Chegada ao ponto de partida</li>
+          <li>Subida até o miradouro</li>
+        </ol>
+        <h6>Incluído</h6>
+        <p>Guia local</p>
+        <h6>Informações</h6>
+        <p>Duração: 2h · Médio · Preço: 12€</p>
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐☆
+        <h6>Comentários</h6>
+        <p><strong>Maria:</strong> Vista deslumbrante!</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Pico do Castelo',12)">
+          🛒 Comprar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GOLFE DO PORTO SANTO -->
+<div class="modal fade" id="modalGolfe" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5>Golfe do Porto Santo</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>Campo de golfe internacional</li>
+          <li>Vistas para o mar</li>
+          <li>Atividades de lazer</li>
+        </ul>
+        <h6>Descrição</h6>
+        <p>Desfrute de um dia no campo de golfe com paisagens incríveis.</p>
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Chegada ao campo</li>
+          <li>Jogo de golfe</li>
+        </ol>
+        <h6>Incluído</h6>
+        <p>Equipamento básico e guia</p>
+        <h6>Informações</h6>
+        <p>Duração: 3h · Fácil · Preço: 25€</p>
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐☆
+        <h6>Comentários</h6>
+        <p><strong>Paulo:</strong> Experiência relaxante e divertida.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Golfe do Porto Santo',25)">
+          🛒 Comprar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer class="bg-secondary text-white text-center p-4 mt-5">
-  &copy; 2025 Madeira Tourism. Todos os direitos reservados.
+  &copy; 2025 Madeira Tourism
 </footer>
 
-<!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
