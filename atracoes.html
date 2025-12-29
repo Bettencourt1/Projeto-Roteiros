@@ -29,17 +29,37 @@
       <a href="atracoes.html" class="text-white me-3">Lugares</a>
       <a href="paginas/coisas-a-fazer/principal.html" class="text-white me-3">Atividades</a>
 
-      <!-- Ícone de usuário com dropdown -->
-      <div class="dropdown">
-        <button class="btn btn-outline-light dropdown-toggle" type="button" id="usuarioDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          👤
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="usuarioDropdown">
-          <li><a class="dropdown-item" href="carrinho.html">Carrinho</a></li>
-          <li><a class="dropdown-item" href="favoritos.html">Favoritos</a></li>
-          <li><a class="dropdown-item" href="notificacoes.html">Notificações</a></li>
-        </ul>
-      </div>
+                    <!-- Ícone de usuário com dropdown -->
+<div class="dropdown">
+
+  <!-- Checkbox invisível que controla o tema -->
+  <input type="checkbox" id="toggle-theme" hidden>
+
+  <button
+    class="btn btn-outline-light dropdown-toggle"
+    type="button"
+    id="usuarioDropdown"
+    data-bs-toggle="dropdown"
+    aria-expanded="false">
+    👤
+  </button>
+
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="usuarioDropdown">
+    <li><a class="dropdown-item" href="carrinho.html">Carrinho</a></li>
+    <li><a class="dropdown-item" href="favoritos.html">Favoritos</a></li>
+    <li><a class="dropdown-item" href="notificacoes.html">Notificações</a></li>
+    <li><a class="dropdown-item" href="roteiro.html">Roteiro</a></li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- Toggle Tema -->
+    <li class="px-3 py-2">
+      <label for="toggle-theme" class="dropdown-item d-flex justify-content-between align-items-center">
+        Alterar Tema (Claro/Escuro)
+      </label>
+    </li>
+  </ul>
+</div>
     </nav>
   </div>
 </header>

@@ -18,17 +18,38 @@
       <a href="atracoes.html" class="text-white me-3">Lugares</a>
       <a href="paginas/coisas-a-fazer/principal.html" class="text-white me-3">Atividades</a>
 
-      <!-- Ícone de usuário com dropdown -->
-      <div class="dropdown">
-        <button class="btn btn-outline-light dropdown-toggle" type="button" id="usuarioDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          👤
-        </button>
-        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="usuarioDropdown">
-          <li><a class="dropdown-item" href="carrinho.html">Carrinho</a></li>
-          <li><a class="dropdown-item" href="favoritos.html">Favoritos</a></li>
-          <li><a class="dropdown-item" href="notificacoes.html">Notificações</a></li>
-        </ul>
-      </div>
+                    <!-- Ícone de usuário com dropdown -->
+<div class="dropdown">
+
+  <!-- Checkbox invisível que controla o tema -->
+  <input type="checkbox" id="toggle-theme" hidden>
+
+  <button
+    class="btn btn-outline-light dropdown-toggle"
+    type="button"
+    id="usuarioDropdown"
+    data-bs-toggle="dropdown"
+    aria-expanded="false">
+    👤
+  </button>
+
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="usuarioDropdown">
+    <li><a class="dropdown-item" href="carrinho.html">Carrinho</a></li>
+    <li><a class="dropdown-item" href="favoritos.html">Favoritos</a></li>
+    <li><a class="dropdown-item" href="notificacoes.html">Notificações</a></li>
+    <li><a class="dropdown-item" href="roteiro.html">Roteiro</a></li>
+
+    <li><hr class="dropdown-divider"></li>
+
+    <!-- Toggle Tema -->
+    <li class="px-3 py-2">
+      <label for="toggle-theme" class="dropdown-item d-flex justify-content-between align-items-center">
+        Alterar Tema (Claro/Escuro)
+      </label>
+    </li>
+  </ul>
+</div>
+
     </nav>
   </div>
 </header>
@@ -61,6 +82,197 @@
     <button class="btn btn-danger btn-sm btn-remover">Remover</button>
   </div>
 </main>
+
+<!-- ================= MODAIS ================= -->
+
+<!-- PRAIA FORMOSA -->
+<div class="modal fade" id="modalPraia" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5>Praia Formosa</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>Praia de seixos e areia negra</li>
+          <li>Infraestruturas completas</li>
+          <li>Excelente para desportos aquáticos</li>
+        </ul>
+
+        <h6>Descrição</h6>
+        <p>A Praia Formosa é a maior praia pública da Madeira, muito popular entre locais e turistas.</p>
+
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Chegada ao Funchal</li>
+          <li>Tempo livre na praia</li>
+        </ol>
+
+        <h6>Incluído</h6>
+        <p>Acesso à praia e áreas públicas</p>
+
+        <h6>Informações</h6>
+        <p>Duração livre · Fácil · Preço: 10€</p>
+
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐☆
+
+        <h6>Comentários</h6>
+        <p><strong>Ana:</strong> Excelente para passar a tarde!</p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Praia Formosa',10)">
+          🛒 Comprar
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- TELEFÉRICO DO FUNCHAL -->
+<div class="modal fade" id="modalTeleferico" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5>Teleférico do Funchal</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>Vista panorâmica da cidade</li>
+          <li>Subida até Monte</li>
+          <li>Fotografia e lazer</li>
+        </ul>
+
+        <h6>Descrição</h6>
+        <p>Uma experiência única de teleférico com vistas incríveis sobre o Funchal e a baía.</p>
+
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Entrada na estação do teleférico</li>
+          <li>Subida até Monte</li>
+        </ol>
+
+        <h6>Incluído</h6>
+        <p>Bilhete de ida e volta</p>
+
+        <h6>Informações</h6>
+        <p>Duração: 30min · Fácil · Preço: 12€</p>
+
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐⭐
+
+        <h6>Comentários</h6>
+        <p><strong>João:</strong> Vistas de cortar a respiração!</p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Teleférico do Funchal',12)">🛒 Comprar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Trilho da Levada -->
+<div class="modal fade" id="modalTrilho" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5>Trilho da Levada</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>Caminhadas fáceis</li>
+          <li>Vistas panorâmicas</li>
+          <li>Natureza exuberante</li>
+        </ul>
+        <h6>Descrição</h6>
+        <p>O Trilho da Levada permite descobrir a flora e fauna únicas da Madeira em passeios tranquilos.</p>
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Início do trilho</li>
+          <li>Paradas para fotografia</li>
+        </ol>
+        <h6>Incluído</h6>
+        <p>Guia opcional</p>
+        <h6>Informações</h6>
+        <p>Duração: 2h · Fácil · Preço: 10€</p>
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐☆
+        <h6>Comentários</h6>
+        <p><strong>Maria:</strong> Paisagens incríveis e relaxantes.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Trilho da Levada',10)">🛒 Comprar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MUSEU CR7 -->
+<div class="modal fade" id="modalCR7" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5>Museu CR7</h5>
+        <button class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <h6>Destaques</h6>
+        <ul>
+          <li>Trofeus e memorabilia</li>
+          <li>História de Cristiano Ronaldo</li>
+          <li>Experiência interativa</li>
+        </ul>
+
+        <h6>Descrição</h6>
+        <p>Conheça a trajetória do craque madeirense e veja coleções únicas no museu.</p>
+
+        <h6>Itinerário</h6>
+        <ol>
+          <li>Visita ao museu</li>
+          <li>Exploração interativa</li>
+        </ol>
+
+        <h6>Incluído</h6>
+        <p>Entrada no museu</p>
+
+        <h6>Informações</h6>
+        <p>Duração: 1h · Fácil · Preço: 10€</p>
+
+        <h6>Classificação</h6>
+        ⭐⭐⭐⭐☆
+
+        <h6>Comentários</h6>
+        <p><strong>Pedro:</strong> Muito interessante e divertido!</p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-outline-secondary">❤️ Favoritos</button>
+        <button class="btn btn-primary" onclick="adicionarAoCarrinho('Museu CR7',10)">🛒 Comprar</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="bg-secondary text-white text-center p-4 mt-5">

@@ -1,438 +1,346 @@
-/* ===============================================
-   VARIÁVEIS DE TEMAS
-================================================ */
-:root {
-  --bg: #f0f2f5;
-  --card-bg: #ffffff;
-  --text: #1a1a1a;
-  --primary: #0d6efd;
-  --secondary: #6c757d;
-  --border-radius: 0.75rem;
-  --transition: 0.3s;
+/* ======================================================
+   RESET + BASE
+====================================================== */
+* {
+  box-sizing: border-box;
 }
 
-[data-theme="dark"] {
-  --bg: #121212;
-  --card-bg: #1e1e1e;
-  --text: #f5f5f5;
-  --primary: #4dabf7;
-  --secondary: #adb5bd;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-/* ===============================================
-   BODY & CONTAINER DE LOGIN
-================================================ */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
   background-color: var(--bg);
   color: var(--text);
-  min-height: 100vh;
-  display: block;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.login-container, .register-container {
-  background-color: var(--card-bg);
-  padding: 2.5rem 3rem;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  width: 100%;
-  max-width: 400px; 
-  margin: 5vh auto; 
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+/* ======================================================
+   TEMA CLARO (DEFAULT)
+====================================================== */
+:root {
+  --bg: #ffffff;
+  --text: #212529;
+  --card: #f8f9fa;
+  --primary: #0d6efd;
+  --secondary: #6c757d;
+  --border: #dee2e6;
 }
 
-/* ===============================================
-   TÍTULOS
-================================================ */
-.login-container h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  color: var(--primary);
+/* ======================================================
+   TEMA ESCURO (SEM JS) – :has()
+====================================================== */
+body:has(#toggle-theme:checked) {
+  --bg: #121212;
+  --text: #f1f1f1;
+  --card: #1e1e1e;
+  --primary: #198754;
+  --secondary: #343a40;
+  --border: #2a2a2a;
+}
+/* Dropdown links claros/escuros */
+body:has(#toggle-theme:checked) .dropdown-menu {
+  background-color: var(--card); /* já tens definido no tema escuro */
 }
 
-/* ===============================================
-   FORMULÁRIO
-================================================ */
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+body:has(#toggle-theme:checked) .dropdown-item {
+  color: white; /* links ficam brancos */
 }
 
-input {
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  transition: border-color var(--transition), box-shadow var(--transition);
-}
-
-input:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 5px rgba(13, 110, 253, 0.5);
-  outline: none;
-}
-
-input:user-valid {
-  border: 2px solid green;
-}
-
-input:user-invalid {
-  border: 2px solid red;
-}
-
-button {
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  border: none;
+body:has(#toggle-theme:checked) .dropdown-item:hover {
   background-color: var(--primary);
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color var(--transition);
+  color: white;
 }
-
-button:hover {
-  background-color: #0056b3;
-}
-
-/* ===============================================
-   LINKS
-================================================ */
-.login-container p {
-  text-align: center;
-  font-size: 0.9rem;
-}
-
-.login-container a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: color var(--transition);
-}
-
-.login-container a:hover {
-  color: #0056b3;
-}
-
-/* ===============================================
-   RESPONSIVIDADE
-================================================ */
-@media (max-width: 500px) {
-  .login-container {
-    padding: 2rem;
-    margin: 1rem;
-  }
-
-  input, button {
-    font-size: 0.95rem;
-  }
-}
-/* ===============================================
-   HERO / BANNER
-================================================ */
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../imagens/banner.jpg') center/cover no-repeat;
-  color: #fff;
-  text-align: center;
-  padding: 5rem 2rem;
-  border-radius: var(--border-radius);
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-/* ===============================================
-   CARD DESTACADO
-================================================ */
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
-}
-/* ===============================================
-   PÁGINA DE ERRO 404
-================================================ */
-.error-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh;
-  text-align: center;
-  padding: 2rem;
-}
-
-.error-container h1 {
-  font-size: 6rem;
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
-.error-container h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.error-container p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
-}
-
-.error-container a.btn {
-  padding: 0.75rem 1.5rem;
-  border-radius: 0.5rem;
-  background-color: var(--primary);
-  color: #fff;
-  text-decoration: none;
-  transition: background-color var(--transition);
-}
-
-.error-container a.btn:hover {
-  background-color: #0056b3;
-}
-.card-body .btn {
-  background-color: rgba(255,255,255,0.9); /* quadrado atrás */
+/* Texto dentro dos cards */
+.card, 
+.card h5, 
+.card p, 
+.card .card-title, 
+.card .card-text {
   color: var(--text);
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  transition: background-color var(--transition), transform var(--transition);
 }
 
-.card-body .btn:hover {
+
+/* ======================================================
+   HEADER / NAVBAR
+====================================================== */
+header {
   background-color: var(--primary);
-  color: #fff;
-  transform: translateY(-2px);
-}
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f8f9fa;
 }
 
-/* HERO */
+header a {
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+header a:hover {
+  opacity: 0.8;
+}
+
+/* ======================================================
+   MAIN
+====================================================== */
+main {
+  flex: 1;
+}
+
+/* ======================================================
+   FOOTER (SEMPRE NO FUNDO)
+====================================================== */
+footer {
+  background-color: var(--secondary);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ======================================================
+   HERO
+====================================================== */
 .hero {
-  height: 320px;
   background-size: cover;
   background-position: center;
-  position: relative;
-  border-radius: 1rem;
-  margin: 1rem;
-}
-
-.hero-overlay {
-  background: rgba(0,0,0,0.5);
-  height: 100%;
+  border-radius: 0.75rem;
+  padding: 5rem 2rem;
+  text-align: center;
   color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 1rem;
 }
 
-/* CARDS */
+/* ======================================================
+   CARD GRID
+====================================================== */
 .card-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
 }
 
-.activity-card img {
-  height: 180px;
-  object-fit: cover;
-}
-
-.activity-card {
-  border-radius: 0.75rem;
-  transition: transform 0.2s ease;
-}
-
-.activity-card:hover {
-  transform: translateY(-5px);
-}
-
-/* MODAL */
-.modal-body h6 {
-  margin-top: 1rem;
-  font-weight: bold;
-}
-/* ===== NORMALIZAR CARDS DE ATIVIDADES ===== */
-
-.card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
 .card {
-  height: 100%;
+  background-color: var(--card);
+  border: 1px solid var(--border);
   border-radius: 0.75rem;
   overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+/* ======================================================
+   BOTÕES
+====================================================== */
+.btn {
+  border-radius: 0.5rem;
+}
+/* Botão Ver / Ver Mais destacado dentro do card */
+.card .btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  transition: transform 0.2s, box-shadow 0.2s, outline 0.2s;
+}
+
+/* Hover + foco (acessível) */
+.card .btn:hover,
+.card .btn:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.2);
+  outline: 3px solid rgba(13, 110, 253, 0.6);
+  outline-offset: 2px;
+}
+
+.card .btn {
+  color: white !important;
+}
+
+/* ======================================================
+   CARRINHO
+====================================================== */
+.carrinho-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.item-nome {
+  flex: 1;
+}
+
+.item-preco {
+  width: 60px;
+  text-align: right;
+  font-weight: bold;
+}
+
+.btn-remover {
+  background-color: transparent;
+  border: none;
+  color: #dc3545;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-remover:hover {
+  text-decoration: underline;
+}
+
+/* ======================================================
+   FAVORITOS / ROTEIRO
+====================================================== */
+.btn-outline-danger {
+  border-radius: 0.5rem;
+}
+
+/* ======================================================
+   MODAIS
+====================================================== */
+.modal-content {
+  background-color: var(--card);
+  color: var(--text);
+}
+
+/* ======================================================
+   DROPDOWN USER
+====================================================== */
+.dropdown-menu {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* ======================================================
+   NOTIFICAÇÕES (REGISTO / LOG)
+====================================================== */
+.notificacao-log {
+  border-left: 4px solid var(--primary);
+  padding: 0.75rem 1rem;
+  background-color: var(--card);
+  margin-bottom: 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* ======================================================
+   RESPONSIVO
+====================================================== */
+@media (max-width: 768px) {
+  header nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+}
+/* Cards todos com a mesma altura */
+.card {
+  height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.card img {
-  width: 100%;
-  height: 180px;              /* ALTURA FIXA */
-  object-fit: cover;          /* CORTA SEM DISTORCER */
-}
-
+/* Corpo do card ocupa tudo */
 .card-body {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-/* Notificação do carrinho */
-.notificacao {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: #0d6efd;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    z-index: 1050;
-    font-weight: bold;
-    animation: fadein 0.3s, fadeout 0.3s 2.7s;
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover; /* mantém proporção */
+}
+/* Botões Ver / Ver Mais – outline acessível */
+.btn:focus,
+.btn:hover {
+  outline: 3px solid rgba(13, 110, 253, 0.6); /* azul bootstrap */
+  outline-offset: 2px;
+}
+/* ======================================================
+   FAVORITOS – ALINHAMENTO DOS BOTÕES
+====================================================== */
+.favorito-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
 }
 
-@keyframes fadein {
-    from {opacity: 0; transform: translateY(-10px);}
-    to {opacity: 1; transform: translateY(0);}
+.favorito-item .item-nome {
+  flex: 1; /* empurra os botões para a direita */
 }
 
-@keyframes fadeout {
-    from {opacity: 1; transform: translateY(0);}
-    to {opacity: 0; transform: translateY(-10px);}
+.favorito-item .btn {
+  min-width: 90px; /* ambos os botões com o mesmo tamanho */
 }
-/* Faz a página ocupar toda a altura da viewport */
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Conteúdo principal flexível */
-main {
-    flex: 1;
+/* ======================================================
+   NOTIFICAÇÕES – PÁGINA DE REGISTOS
+====================================================== */
+.notificacao-item {
+  background-color: var(--card);
+  border-left: 5px solid var(--primary);
+  padding: 1rem 1.25rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* Footer fixo no final da página */
-footer {
-    flex-shrink: 0; /* Não encolhe */
-}
-.carrinho-item {
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
+.notificacao-item h6 {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
 }
 
-.item-nome {
-    flex: 1; /* ocupa o espaço restante */
+.notificacao-item p {
+  margin-bottom: 0.5rem;
 }
 
-.item-preco {
-    flex-shrink: 0; /* não encolhe */
-    margin-left: 1rem;
-    font-weight: bold;
+/* ======================================================
+   TIPOS DE NOTIFICAÇÃO
+====================================================== */
+
+/* Sucesso / Adicionado aos favoritos */
+.notificacao-item:not(.amarelo):not(.vermelho) {
+  border-left-color: #198754; /* verde */
 }
-/* Layout do carrinho */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
 
-    main {
-      flex: 1;
-      padding: 2rem;
-    }
+/* Compra / Carrinho */
+.notificacao-item.amarelo {
+  border-left-color: #ffc107; /* amarelo */
+  background-color: rgba(255, 193, 7, 0.1);
+}
 
-    h1 {
-      margin-bottom: 1rem;
-    }
-
-    .carrinho-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid #ccc;
-    }
-
-    .item-nome {
-      flex: 1;
-    }
-
-    .item-preco {
-      flex-shrink: 0;
-      margin-left: 1rem;
-      font-weight: bold;
-    }
-
-    .btn-remover {
-      margin-left: 1rem;
-      padding: 0.25rem 0.5rem;
-      font-size: 0.9rem;
-      border: none;
-      background-color: #dc3545;
-      color: white;
-      border-radius: 0.25rem;
-      cursor: pointer;
-    }
-
-    footer {
-      background-color: #6c757d;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      flex-shrink: 0;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    main {
-      flex: 1;
-    }
-
-    .favorito-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.75rem 1rem;
-      margin-bottom: 0.5rem;
-      background-color: #f8f9fa;
-      border-radius: 0.5rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    .item-nome {
-      font-weight: 500;
-      flex: 1;
-    }
-
-    .btn-ver, .btn-remover {
-      margin-left: 0.5rem;
-    }
-
-    footer {
-      flex-shrink: 0;
-    }
+/* Alerta / Tempo a acabar */
+.notificacao-item.vermelho {
+  border-left-color: #dc3545; /* vermelho */
+  background-color: rgba(220, 53, 69, 0.1);
+}
